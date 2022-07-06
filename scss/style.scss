@@ -1,0 +1,148 @@
+@import "nullstyle";
+@import "fonts";
+
+body {
+	font-family: $roboto;
+	font-weight: 400;
+	font-size: 17px;
+	color: #212121;
+}
+a {
+	color: inherit;
+}
+//==============================================
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.container {
+	width: 1220px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+.logo {
+	display: flex;
+	align-items: center;
+	&__img {
+		max-width: 105px;
+	}
+	&__slogan {
+		max-width: 128px;
+		font-size: 12px;
+		line-height: 1.17;
+		margin-left: 20px;
+	}
+}
+
+.btn-primary {
+	background: #00bf96;
+	box-shadow: 0px 10px 20px rgba(0, 191, 150, 0.3);
+	border-radius: 25px;
+	letter-spacing: 0.02em;
+	line-height: 45px;
+}
+.btn-secondary {
+	background: #1a3d8a;
+	border-radius: 25px;
+	letter-spacing: 0.02em;
+	line-height: 45px;
+}
+//==============================================
+.page {
+	flex: 1 1 auto;
+}
+//===============================================
+.header {
+	color: #ffffff;
+	background-image: url(../img/header/header-bc.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	&__menu {
+		display: flex;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	&__brand {
+		margin-right: 178px;
+	}
+	&__nav {
+		display: flex;
+		align-items: center;
+		margin-right: 88px;
+		&-list {
+			display: flex;
+		}
+		&-item {
+			line-height: 2.6;
+			&:not(:last-child) {
+				margin-right: 50px;
+			}
+		}
+	}
+	&__burger-btn {
+	}
+	&__contacts {
+		&-phone {
+			display: flex;
+			align-items: center;
+			letter-spacing: 0.02em;
+		}
+		&-img {
+			margin-left: 15px;
+		}
+	}
+	&__box {
+		display: flex;
+	}
+	&__content {
+		margin-top: 146px;
+	}
+	&__content-title {
+		font-family: $bebasNeue;
+		font-weight: 700;
+		font-size: 50px;
+		line-height: 60px;
+		max-width: 387px;
+	}
+	&__content-text {
+		max-width: 357px;
+		margin-top: 30px;
+		line-height: 27px;
+	}
+	&__img {
+		position: relative;
+	}
+	&__img-earth {
+		position: absolute;
+		top: -10px;
+		left: 286px;
+	}
+	&__img-moonone {
+		position: absolute;
+		top: 170px;
+		left: 285px;
+	}
+	&__img-moontwo {
+		position: absolute;
+		top: 550px;
+		left: 220px;
+	}
+	&__img-moonthree {
+		position: absolute;
+		top: 266px;
+		left: 900px;
+	}
+	&__img-moonfour {
+		position: absolute;
+		top: 426px;
+		left: 776px;
+	}
+	&__btn {
+		display: inline-block;
+		margin-top: 37px;
+		margin-bottom: 215px;
+		padding: 0px 52px 0px 52px;
+	}
+}

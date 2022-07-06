@@ -1,0 +1,275 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/bebas_neue_bold.woff2") format("woff2"), url("../fonts/bebas_neue_bold.woff") format("woff"), url("../fonts/bebas_neue_bold.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: 700;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #212121;
+}
+
+a {
+  color: inherit;
+}
+
+.wrapper {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+.container {
+  width: 1220px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo__img {
+  max-width: 105px;
+}
+
+.logo__slogan {
+  max-width: 128px;
+  font-size: 12px;
+  line-height: 1.17;
+  margin-left: 20px;
+}
+
+.btn-primary {
+  background: #00bf96;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 191, 150, 0.3);
+          box-shadow: 0px 10px 20px rgba(0, 191, 150, 0.3);
+  border-radius: 25px;
+  letter-spacing: 0.02em;
+  line-height: 45px;
+}
+
+.btn-secondary {
+  background: #1a3d8a;
+  border-radius: 25px;
+  letter-spacing: 0.02em;
+  line-height: 45px;
+}
+
+.page {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.header {
+  color: #ffffff;
+  background-image: url(../img/header/header-bc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header__brand {
+  margin-right: 178px;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 88px;
+}
+
+.header__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__nav-item {
+  line-height: 2.6;
+}
+
+.header__nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header__contacts-phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.02em;
+}
+
+.header__contacts-img {
+  margin-left: 15px;
+}
+
+.header__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__content {
+  margin-top: 146px;
+}
+
+.header__content-title {
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  max-width: 387px;
+}
+
+.header__content-text {
+  max-width: 357px;
+  margin-top: 30px;
+  line-height: 27px;
+}
+
+.header__img {
+  position: relative;
+}
+
+.header__img-earth {
+  position: absolute;
+  top: -10px;
+  left: 286px;
+}
+
+.header__img-moonone {
+  position: absolute;
+  top: 170px;
+  left: 285px;
+}
+
+.header__img-moontwo {
+  position: absolute;
+  top: 550px;
+  left: 220px;
+}
+
+.header__img-moonthree {
+  position: absolute;
+  top: 266px;
+  left: 900px;
+}
+
+.header__img-moonfour {
+  position: absolute;
+  top: 426px;
+  left: 776px;
+}
+
+.header__btn {
+  display: inline-block;
+  margin-top: 37px;
+  margin-bottom: 215px;
+  padding: 0px 52px 0px 52px;
+}
