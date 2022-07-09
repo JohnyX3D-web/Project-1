@@ -1,5 +1,11 @@
 @import "nullstyle";
 @import "fonts";
+$bp-320-max: 320px;
+$bp-375-max: 375px;
+$bp-425-max: 425px;
+$bp-768-max: 768px;
+$bp-1024-max: 1024px;
+$bp-1200-max: 1199.98px;
 
 body {
 	font-family: $roboto;
@@ -18,7 +24,7 @@ a {
 	min-height: 100%;
 }
 .container {
-	width: 1220px;
+	max-width: 1220px;
 	margin: 0 auto;
 	padding: 0 10px;
 }
@@ -33,7 +39,17 @@ a {
 		font-size: 12px;
 		line-height: 1.17;
 		margin-left: 20px;
+		@media screen and (max-width: $bp-425-max) {
+			display: none;
+		}
 	}
+}
+.title {
+	font-family: $bebasNeue;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	text-transform: uppercase;
 }
 
 .btn-primary {
@@ -58,39 +74,157 @@ a {
 	color: #ffffff;
 	background-image: url(../img/header/header-bc.jpg);
 	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
 	&__menu {
 		display: flex;
 		padding-top: 10px;
 		padding-bottom: 10px;
+		@media screen and (max-width: $bp-425-max) {
+			justify-content: space-between;
+		}
 	}
 	&__brand {
-		margin-right: 178px;
+		padding-right: 178px;
+		@media screen and (max-width: $bp-1200-max) {
+			padding-right: 80px;
+		}
+		@media screen and (max-width: $bp-1024-max) {
+			padding-right: 220px;
+		}
+		@media screen and (max-width: $bp-768-max) {
+			padding-right: 110px;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			padding-right: 70px;
+		}
+		@media screen and (max-width: $bp-375-max) {
+			padding-right: 50px;
+		}
 	}
 	&__nav {
 		display: flex;
 		align-items: center;
 		margin-right: 88px;
+		@media screen and (max-width: $bp-1024-max) {
+			margin-right: 205px;
+		}
+		@media screen and (max-width: $bp-768-max) {
+			margin-right: 75px;
+		}
+		@media screen and (max-width: $bp-375-max) {
+			margin-right: 55px;
+		}
 		&-list {
 			display: flex;
+
+			@media screen and (max-width: $bp-1024-max) {
+				position: absolute;
+				top: -200px;
+				left: 0;
+				flex-direction: column;
+				width: 100%;
+				text-align: center;
+				transition: 0.5s all;
+				z-index: 10;
+				&--active {
+					top: 62px;
+				}
+			}
 		}
 		&-item {
 			line-height: 2.6;
+
+			@media screen and (max-width: $bp-1024-max) {
+				background-color: #00bf96;
+				border: 1px solid #212121;
+			}
+
 			&:not(:last-child) {
 				margin-right: 50px;
+				@media screen and (max-width: $bp-1200-max) {
+					margin-right: 30px;
+				}
+				@media screen and (max-width: $bp-1024-max) {
+					margin-right: 0px;
+				}
+			}
+			& a {
+				display: block;
 			}
 		}
 	}
 	&__burger-btn {
+		display: none;
+		cursor: pointer;
+		width: 50px;
+		padding: 13px 0;
+		background-color: transparent;
+		margin-left: auto;
+		z-index: 100;
+		position: relative;
+		transform: rotate(0deg);
+		transition: 0.5s ease-in-out;
+		@media screen and (max-width: $bp-1024-max) {
+			display: block;
+		}
+		& span {
+			display: block;
+			height: 5px;
+			background-color: #ffffff;
+			border-radius: 9px;
+			opacity: 1;
+			transition: 0.25s ease-in-out;
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			left: 0;
+			background-color: #ffffff;
+			border-radius: 9px;
+			transform: rotate(0deg);
+			transition: 0.25s ease-in-out;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		&--open {
+			& span {
+				transform: translateX(-50px);
+				opacity: 0;
+			}
+			&::before {
+				top: 18px;
+				transform: rotate(135deg);
+			}
+			&::after {
+				top: 18px;
+				transform: rotate(-135deg);
+			}
+		}
 	}
 	&__contacts {
+		@media screen and (max-width: $bp-425-max) {
+			display: none;
+		}
 		&-phone {
 			display: flex;
 			align-items: center;
 			letter-spacing: 0.02em;
+			& p {
+			}
 		}
 		&-img {
 			margin-left: 15px;
+			@media screen and (max-width: $bp-425-max) {
+				margin-left: 0px;
+			}
 		}
 	}
 	&__box {
@@ -98,6 +232,16 @@ a {
 	}
 	&__content {
 		margin-top: 146px;
+		@media screen and (max-width: $bp-768-max) {
+			margin-top: 100px;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			margin-top: 70px;
+			text-align: center;
+		}
+		@media screen and (max-width: $bp-375-max) {
+			margin-top: 50px;
+		}
 	}
 	&__content-title {
 		font-family: $bebasNeue;
@@ -105,44 +249,228 @@ a {
 		font-size: 50px;
 		line-height: 60px;
 		max-width: 387px;
+		text-transform: uppercase;
+		@media screen and (max-width: $bp-425-max) {
+			font-size: 40px;
+			text-align: center;
+			max-width: 390px;
+			line-height: 54px;
+		}
+		@media screen and (max-width: $bp-375-max) {
+			max-width: 360px;
+			font-size: 34px;
+		}
+		@media screen and (max-width: $bp-320-max) {
+			max-width: 300px;
+		}
 	}
 	&__content-text {
 		max-width: 357px;
 		margin-top: 30px;
 		line-height: 27px;
+		@media screen and (max-width: $bp-425-max) {
+			margin-top: 25px;
+			line-height: 22px;
+			text-align: center;
+			max-width: 384px;
+		}
+		@media screen and (max-width: $bp-375-max) {
+			max-width: 350px;
+			font-size: 14px;
+			margin-top: 20px;
+		}
+		@media screen and (max-width: $bp-320-max) {
+			max-width: 300px;
+		}
 	}
 	&__img {
 		position: relative;
 	}
 	&__img-earth {
 		position: absolute;
-		top: -10px;
-		left: 286px;
+		top: -27px;
+		left: 170px;
+		width: 643px;
+		@media screen and (max-width: $bp-768-max) {
+			top: 6px;
+			left: 35px;
+			width: 482px;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			display: none;
+		}
 	}
 	&__img-moonone {
 		position: absolute;
-		top: 170px;
-		left: 285px;
+		top: 160px;
+		left: 160px;
+		@media screen and (max-width: $bp-768-max) {
+			display: none;
+		}
 	}
 	&__img-moontwo {
 		position: absolute;
 		top: 550px;
-		left: 220px;
+		left: 108px;
+		@media screen and (max-width: $bp-768-max) {
+			display: none;
+		}
 	}
 	&__img-moonthree {
 		position: absolute;
-		top: 266px;
-		left: 900px;
+		top: 255px;
+		left: 770px;
+		@media screen and (max-width: $bp-1024-max) {
+			display: none;
+		}
 	}
 	&__img-moonfour {
 		position: absolute;
-		top: 426px;
-		left: 776px;
+		top: 435px;
+		left: 675px;
+		@media screen and (max-width: $bp-1024-max) {
+			display: none;
+		}
 	}
 	&__btn {
 		display: inline-block;
 		margin-top: 37px;
 		margin-bottom: 215px;
 		padding: 0px 52px 0px 52px;
+		@media screen and (max-width: $bp-768-max) {
+			margin-bottom: 130px;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			margin-bottom: 100px;
+		}
 	}
+}
+
+//========================================
+.page {
+	&__cases {
+	}
+}
+.cases {
+	padding-top: 70px;
+	padding-bottom: 70px;
+	&__title {
+		text-align: center;
+		margin-bottom: 20px;
+		@media screen and (max-width: $bp-425-max) {
+			font-size: 25px;
+		}
+	}
+	&__subtitle {
+		font-weight: 300;
+		line-height: 27px;
+		text-align: center;
+		max-width: 990px;
+		margin: 0 auto;
+		@media screen and (max-width: 1250px) {
+			max-width: 800px;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			font-size: 14px;
+		}
+	}
+	&__items {
+		margin-top: 50px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 40px 270px;
+		@media screen and (max-width: 1250px) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+	}
+	&__item {
+	}
+	&__item-img {
+		margin-bottom: 30px;
+	}
+	&__item-text {
+		width: 224px;
+		line-height: 27px;
+	}
+}
+//===========================================
+.page {
+	&__examples {
+	}
+}
+.examples {
+	background-color: #00bf96;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	&__title {
+		color: #ffffff;
+	}
+	&__text {
+		font-weight: 500;
+		font-size: 19px;
+		line-height: 27px;
+		text-decoration-line: underline;
+		color: #ffffff;
+	}
+}
+
+.slick {
+	background-color: #ffffff;
+	box-shadow: 0px 4px 50px rgba(26, 61, 138, 0.15);
+	margin-top: 50px;
+	&__wrapper {
+		padding: 50px 50px 5px 50px;
+		display: flex;
+		justify-content: flex-start;
+	}
+	&__title {
+	}
+	&__title-text {
+		color: #1a3d8a;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 27px;
+		margin-bottom: 45px;
+	}
+	&__title-img {
+	}
+	&__content {
+		margin-left: 50px;
+	}
+	&__content-subtitle {
+		display: inline-block;
+		font-weight: 500;
+		line-height: 20px;
+		letter-spacing: 0.01em;
+		padding-bottom: 20px;
+	}
+	&__content-pretext {
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 27px;
+		padding-bottom: 50px;
+	}
+	&__content-text {
+		font-weight: 300;
+		line-height: 27px;
+	}
+	&__buttons {
+		display: flex;
+	}
+	&__arrow {
+	}
+	&__arrow-left {
+	}
+	&__number {
+	}
+	&__arrow-right {
+	}
+	&__btn {
+	}
+}
+.btn-secondary {
 }
