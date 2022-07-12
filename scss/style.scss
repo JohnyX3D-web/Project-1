@@ -8,6 +8,7 @@ $bp-1024-max: 1024px;
 $bp-1200-max: 1199.98px;
 
 body {
+	height: 100%;
 	font-family: $roboto;
 	font-weight: 400;
 	font-size: 17px;
@@ -76,6 +77,7 @@ a {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	overflow: hidden;
 	&__menu {
 		display: flex;
 		padding-top: 10px;
@@ -117,7 +119,7 @@ a {
 		}
 		&-list {
 			display: flex;
-
+			z-index: 6;
 			@media screen and (max-width: $bp-1024-max) {
 				position: absolute;
 				top: -200px;
@@ -286,11 +288,19 @@ a {
 	&__img {
 		position: relative;
 	}
+	&__img-sputnik {
+		position: absolute;
+		top: -40px;
+		left: 300px;
+		width: 540px;
+		z-index: 5;
+	}
 	&__img-earth {
 		position: absolute;
-		top: -27px;
+		top: 137px;
 		left: 170px;
-		width: 643px;
+		width: 430px;
+		transition: transform ease;
 		@media screen and (max-width: $bp-768-max) {
 			top: 6px;
 			left: 35px;
@@ -304,6 +314,7 @@ a {
 		position: absolute;
 		top: 160px;
 		left: 160px;
+		transition: transform ease;
 		@media screen and (max-width: $bp-768-max) {
 			display: none;
 		}
@@ -312,6 +323,7 @@ a {
 		position: absolute;
 		top: 550px;
 		left: 108px;
+		transition: transform ease;
 		@media screen and (max-width: $bp-768-max) {
 			display: none;
 		}
@@ -320,6 +332,7 @@ a {
 		position: absolute;
 		top: 255px;
 		left: 770px;
+		transition: transform ease;
 		@media screen and (max-width: $bp-1024-max) {
 			display: none;
 		}
@@ -328,6 +341,7 @@ a {
 		position: absolute;
 		top: 435px;
 		left: 675px;
+		transition: transform ease;
 		@media screen and (max-width: $bp-1024-max) {
 			display: none;
 		}
@@ -358,7 +372,7 @@ a {
 		text-align: center;
 		margin-bottom: 20px;
 		@media screen and (max-width: $bp-425-max) {
-			font-size: 25px;
+			font-size: 21px;
 		}
 	}
 	&__subtitle {
@@ -372,22 +386,35 @@ a {
 		}
 		@media screen and (max-width: $bp-425-max) {
 			font-size: 14px;
+			line-height: 20px;
 		}
 	}
 	&__items {
 		margin-top: 50px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 		gap: 40px 270px;
 		@media screen and (max-width: 1250px) {
 			grid-template-columns: 1fr 1fr;
 		}
-		@media screen and (max-width: $bp-425-max) {
+		@media screen and (max-width: $bp-768-max) {
+			gap: 40px 10px;
+		}
+		@media screen and (max-width: 475px) {
 			grid-template-columns: 1fr;
 			justify-items: center;
 		}
 	}
 	&__item {
+		@media screen and (max-width: 475px) {
+			& img {
+				height: 73px;
+			}
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 	&__item-img {
 		margin-bottom: 30px;
@@ -395,6 +422,10 @@ a {
 	&__item-text {
 		width: 224px;
 		line-height: 27px;
+		@media screen and (max-width: 475px) {
+			text-align: center;
+			font-size: 16px;
+		}
 	}
 }
 //===========================================
@@ -406,8 +437,16 @@ a {
 	background-color: #00bf96;
 	padding-top: 70px;
 	padding-bottom: 70px;
+	@media screen and (max-width: 480px) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 	&__title {
 		color: #ffffff;
+		@media screen and (max-width: 480px) {
+			font-size: 21px;
+			line-height: 28px;
+		}
 	}
 	&__text {
 		font-weight: 500;
@@ -415,6 +454,10 @@ a {
 		line-height: 27px;
 		text-decoration-line: underline;
 		color: #ffffff;
+		@media screen and (max-width: 480px) {
+			display: block;
+			text-align: center;
+		}
 	}
 }
 
@@ -422,10 +465,26 @@ a {
 	background-color: #ffffff;
 	box-shadow: 0px 4px 50px rgba(26, 61, 138, 0.15);
 	margin-top: 50px;
+	margin-bottom: 30px;
+	padding-bottom: 50px;
+	@media screen and (max-width: 480px) {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		padding-bottom: 30px;
+	}
 	&__wrapper {
 		padding: 50px 50px 5px 50px;
+		@media screen and (max-width: 480px) {
+			padding: 16px 16px 25px 16px;
+		}
+	}
+	&__item {
+		overflow: hidden;
 		display: flex;
 		justify-content: flex-start;
+		@media screen and (max-width: 480px) {
+			display: block;
+		}
 	}
 	&__title {
 	}
@@ -435,11 +494,18 @@ a {
 		font-size: 20px;
 		line-height: 27px;
 		margin-bottom: 45px;
+		@media screen and (max-width: 480px) {
+			margin-bottom: 20px;
+		}
 	}
 	&__title-img {
 	}
 	&__content {
 		margin-left: 50px;
+		@media screen and (max-width: 480px) {
+			margin-left: 0px;
+			margin-top: 16px;
+		}
 	}
 	&__content-subtitle {
 		display: inline-block;
@@ -447,30 +513,205 @@ a {
 		line-height: 20px;
 		letter-spacing: 0.01em;
 		padding-bottom: 20px;
+		@media screen and (max-width: 480px) {
+			font-size: 14px;
+			padding-bottom: 12px;
+		}
 	}
 	&__content-pretext {
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 27px;
 		padding-bottom: 50px;
+		@media screen and (max-width: 480px) {
+			padding-bottom: 20px;
+			font-size: 16px;
+			line-height: 24px;
+		}
 	}
 	&__content-text {
 		font-weight: 300;
 		line-height: 27px;
+		@media screen and (max-width: 480px) {
+			font-size: 14px;
+			line-height: 21px;
+		}
 	}
 	&__buttons {
 		display: flex;
+		align-items: center;
+		@media screen and (max-width: 480px) {
+			justify-content: center;
+		}
 	}
 	&__arrow {
+		position: relative;
+		@media screen and (max-width: 480px) {
+			display: none;
+		}
 	}
 	&__arrow-left {
+		position: absolute;
+		top: 3px;
+		left: 50px;
+		background-color: inherit;
 	}
 	&__number {
+		text-align: center;
+		padding-left: 180px;
+		padding-right: 188px;
+		&-change {
+			color: #333333;
+			font-weight: 500;
+			font-size: 19px;
+			line-height: 27px;
+		}
 	}
 	&__arrow-right {
+		position: absolute;
+		top: 3px;
+		left: 300px;
+		background-color: inherit;
 	}
 	&__btn {
+		padding: 0 55px 0 55px;
+		color: #ffffff;
+		font-weight: 400;
+		font-size: 17px;
+		transition: all 0.3s ease-in;
+		&:hover {
+			background-color: #4074e4;
+		}
+	}
+	&-disabled path {
+		fill: #c4c4c4;
+	}
+	&-dots {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		& li {
+			margin-right: 12px;
+		}
+		& li button {
+			font-size: 0;
+			width: 16px;
+			height: 16px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+		}
+		& li.slick-active button {
+			background-color: #ffffff;
+		}
 	}
 }
-.btn-secondary {
+
+#slider-dots {
+	display: none;
+	@media screen and (max-width: 480px) {
+		display: block;
+		margin-bottom: 40px;
+	}
+}
+//======================================================
+.page {
+	&__who {
+	}
+}
+.who {
+	padding-top: 80px;
+	padding-bottom: 70px;
+	&__title {
+		text-align: center;
+		margin-bottom: 20px;
+		@media screen and (max-width: 480px) {
+			font-size: 21px;
+			line-height: 28px;
+		}
+	}
+	&__text {
+		text-align: center;
+		padding-bottom: 50px;
+		max-width: 996px;
+		margin: 0 auto;
+		@media screen and (max-width: 480px) {
+			font-size: 14px;
+		}
+	}
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 30px 135px;
+		@media screen and (max-width: $bp-1200-max) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+		}
+		@media screen and (max-width: $bp-768-max) {
+			gap: 30px 10px;
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		@media screen and (max-width: $bp-768-max) {
+			flex-direction: column;
+		}
+	}
+	&__item-image {
+		margin-right: 30px;
+		@media screen and (max-width: $bp-768-max) {
+			margin-right: 0px;
+			padding-bottom: 20px;
+		}
+	}
+	&__item-text {
+		font-weight: 400;
+		font-size: 19px;
+		line-height: 25px;
+		max-width: 190px;
+		@media screen and (max-width: $bp-768-max) {
+			text-align: center;
+			font-size: 16px;
+		}
+	}
+}
+//============================================================
+.page {
+	&__order {
+	}
+}
+.order {
+	background-color: #1a3d8a;
+	padding-top: 30px;
+	padding-bottom: 70px;
+	&__innder {
+		display: flex;
+	}
+	&__content {
+		margin-top: 137px;
+	}
+	&__content-title {
+		color: #ffffff;
+		margin-bottom: 29px;
+	}
+	&__content-text {
+		line-height: 27px;
+		color: #ffffff;
+		margin-bottom: 35px;
+		max-width: 387px;
+	}
+	&__content-btn {
+		padding: 0 71px;
+	}
+	&__steps {
+	}
+	&__steps-right {
+	}
+	&__steps-title {
+	}
+	&__steps-text {
+	}
+	&__steps-left {
+	}
 }
