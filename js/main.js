@@ -28,24 +28,71 @@ function closeMenu() {
 	burgerBtn.classList.remove("header__burger-btn--open");
 	navList.classList.remove("header__nav-list--active");
 }
-
+//========================================================
 navList.addEventListener("click", function (event) {
 	if (event.target.closest("a")) {
 		//closest - перевіряє чи елемент на якому ми викликаємоу функцію closest відповідає заданому селектору("а") якщо відповідає то повертає елемент відразу, якщо ні то йде до батьківських поки не знайде( якщо не знайде то повертає нул)
 		const target = event.target.closest("a");
+		const wrapper = document.querySelector(".wrapper");
 
 		event.preventDefault();
 		const elementId = target.getAttribute("href");
 		const element = document.querySelector(elementId);
 		const offsetTop = element.offsetTop;
 
-		scroll({
+		wrapper.scroll({
 			top: offsetTop,
 			behavior: "smooth",
 		});
 	}
 });
+//===============================================
+const headerSection = document.querySelector(".header");
+const headerMenu = headerSection.querySelector(".header__menu");
+const headerMenuRect = headerMenu.getBoundingClientRect();
 
+const headerObserver = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting === false) {
+				headerMenu.classList.add("header__menu--stick");
+				headerSection.style.paddingTop = headerMenuRect.height + "px";
+			} else {
+				headerMenu.classList.remove("header__menu--stick");
+				headerSection.style.paddingTop = "";
+			}
+		});
+	},
+	{
+		rootMargin: "-5px 0px 0px 0px",
+	}
+);
+headerObserver.observe(headerSection);
+//===================================================
+const pageSections = document.querySelectorAll(".page__section");
+let isInitLoad = true;
+const wrapper = document.querySelector(".wrapper");
+
+const sectionsObserver = new IntersectionObserver(
+	(entries) => {
+		entries.forEach(function (entry) {
+			const selector = `.header__nav-link[href="#${entry.target.id}"]`;
+			const link = document.querySelector(selector);
+			link.classList.toggle(
+				"header__nav-link--active",
+				entry.isIntersecting === true
+			);
+		});
+	},
+	{
+		root: wrapper,
+		rootMargin: "0px 0px -100% 0px",
+	}
+);
+
+pageSections.forEach(function (section) {
+	sectionsObserver.observe(section);
+});
 //==============================================================
 $(function () {
 	$(".slick__wrapper")
@@ -90,13 +137,17 @@ const cof4 = 4;
 const cof5 = 7;
 const cof6 = 20;
 
-window.addEventListener("scroll", function () {
-	earth.style.transform = `translateY(-${scrollY / cof5}px)`;
-	moonOne.style.transform = `translateY(-${scrollY / cof4}px)`;
-	moonTwo.style.transform = `translateY(-${scrollY / cof3}px)`;
-	moonThree.style.transform = `translateY(-${scrollY / cof2}px)`;
-	moonFour.style.transform = `translateY(-${scrollY / cof1}px)`;
-	sputnik.style.transform = `translate(-${scrollY / 30}px,${scrollY / cof6}px)`;
+wrapper.addEventListener("scroll", function (event) {
+	// не працює
+
+	earth.style.transform = `translateY(-${wrapper.scrollTop / cof5}px)`;
+	moonOne.style.transform = `translateY(-${wrapper.scrollTop / cof4}px)`;
+	moonTwo.style.transform = `translateY(-${wrapper.scrollTop / cof3}px)`;
+	moonThree.style.transform = `translateY(-${wrapper.scrollTop / cof2}px)`;
+	moonFour.style.transform = `translateY(-${wrapper.scrollTop / cof1}px)`;
+	sputnik.style.transform = `translate(-${wrapper.scrollTop / 30}px,${
+		wrapper.scrollTop / cof6
+	}px)`;
 });
 
 header.addEventListener("mousemove", function (event) {
@@ -108,3 +159,127 @@ header.addEventListener("mousemove", function (event) {
 	sputnik.style.transform = `translate(${coordX / 35}px,${coordY / 35}px)`;
 });
 //================================================================
+const counter = document.querySelector(".caunter");
+
+function countAnimation() {
+	let startTimestamp = null;
+	const duration = 2000;
+	const startValue = counter.textContent;
+	const startPosition = 0;
+	const step = function (timestamp) {
+		if (!startTimestamp) startTimestamp = timestamp;
+		const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+		counter.textContent = Math.floor(progress * (startPosition + startValue));
+
+		if (progress < 1) {
+			window.requestAnimationFrame(step);
+		}
+	};
+	window.requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((enties, observer) => {
+	enties.forEach((entry) => {
+		if (entry.isIntersecting) {
+			countAnimation();
+			observer.unobserve(counter);
+		}
+	});
+}, {});
+counterObserver.observe(counter);
+
+//====================================================================
+
+const accordionButtons = document.querySelectorAll(".accordion__btn");
+
+accordionButtons.forEach(function (button) {
+	button.addEventListener("click", function () {
+		const accordionContent = button.nextElementSibling;
+		const activeAccordionButton = document.querySelector(
+			".accordion__btn--active"
+		);
+		const openAccordionContent = document.querySelector(
+			".accordion__content--open"
+		);
+		//debugger;
+		if (activeAccordionButton && activeAccordionButton !== button) {
+			activeAccordionButton.classList.remove("accordion__btn--active");
+			openAccordionContent.classList.remove("accordion__content--open");
+		}
+
+		button.classList.toggle("accordion__btn--active");
+		accordionContent.classList.toggle("accordion__content--open");
+	});
+});
+//==============================================================================
+
+const tariff = document.querySelector(".form__tariff");
+const tariffButton = tariff.querySelector(".form__tariff-btn");
+const tariffList = tariff.querySelector(".form__tariff-lis");
+
+tariffButton.addEventListener("click", function (e) {
+	e.preventDefault();
+	tariffList.classList.toggle("form__tariff-lis--open");
+});
+
+//======================================================================
+
+const orderSteps = document.querySelectorAll(
+	".order__steps-right, .order__steps-left"
+);
+
+const orderObserver = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add(
+					"order__steps-right--show",
+					"order__steps-left--show"
+				);
+			} else {
+				entry.target.classList.remove(
+					"order__steps-right--show",
+					"order__steps-left--show"
+				);
+			}
+		});
+	},
+	{
+		root: wrapper,
+		rootMargin: "-110px 0px -100px 0px",
+	}
+);
+
+orderSteps.forEach(function (step) {
+	orderObserver.observe(step);
+});
+//===============================================================
+const imgWho = document.querySelectorAll("img[data-src]");
+let loadedImages = 0;
+
+const whoObserver = new IntersectionObserver(
+	(entries, observer) => {
+		entries.forEach((entry) => {
+			const img = entry.target;
+			const imgSrc = img.dataset.src;
+
+			if (entry.isIntersecting === true) {
+				img.src = imgSrc;
+				loadedImages++;
+				observer.unobserve(img);
+			}
+
+			if (loadedImages === imgWho.length) {
+				observer.disconnect();
+			}
+		});
+	},
+	{
+		root: wrapper,
+		rootMargin: "500px 0px 500px 0px",
+	}
+);
+imgWho.forEach(function (step) {
+	whoObserver.observe(step);
+});
+//==================================================================

@@ -11,8 +11,8 @@
 	<body>
 		<div class="wrapper">
 			<header class="header">
-				<div class="container">
-					<div class="header__menu">
+				<div class="header__menu">
+					<div class="container header__menu-inner">
 						<div class="header__brand">
 							<a href="#" class="logo">
 								<img class="logo__img" src="/img/header/logo.svg" alt="Logo" />
@@ -23,14 +23,16 @@
 							<button class="header__burger-btn"><span></span></button>
 							<ul class="header__nav-list">
 								<li class="header__nav-item">
-									<a class="test" href="#cases">Применение</a>
+									<a class="header__nav-link" href="#cases">Применение</a>
 								</li>
 								<li class="header__nav-item">
-									<a href="#examples">Примеры</a>
+									<a class="header__nav-link" href="#examples">Примеры</a>
 								</li>
-								<li class="header__nav-item"><a href="#tariffs">Тарифы</a></li>
 								<li class="header__nav-item">
-									<a href="#contacts">Контакты</a>
+									<a class="header__nav-link" href="#tariffs">Тарифы</a>
+								</li>
+								<li class="header__nav-item">
+									<a class="header__nav-link" href="#contacts">Контакты</a>
 								</li>
 							</ul>
 						</nav>
@@ -44,6 +46,8 @@
 							/></a>
 						</div>
 					</div>
+				</div>
+				<div class="container">
 					<div class="header__box">
 						<div class="header__content">
 							<h1 class="header__content-title">
@@ -93,7 +97,7 @@
 			</header>
 
 			<main class="page">
-				<section id="cases" class="page__cases cases">
+				<section id="cases" class="page__section cases">
 					<div class="container">
 						<h2 class="cases__title title">
 							В КАКИХ СЛУЧАЯХ ВЫ МОЖЕТЕ ИСПОЛЬЗОВАТЬ КОСМИЧЕСКИЕ СНИМКИ В СУДЕ
@@ -169,288 +173,680 @@
 					</div>
 				</section>
 
-				<section id="examples" class="page__examples examples">
-					<div class="container">
-						<h2 class="examples__title title">
-							Примеры ПРИМЕНЕНИя СНИМКОВ В СУДЕБНОЙ ПРАКТИКЕ
-						</h2>
-						<div class="slick">
-							<div class="slick__wrapper">
-								<div>
-									<div class="slick__item">
-										<div class="slick__title">
-											<h4 class="slick__title-text">
-												Кейс — Нарушение условий аренды земельного участка
-											</h4>
-											<img
-												src="/img/examples/slick-img1.svg"
-												alt="SlickImg"
-												class="slick__title-img"
-											/>
+				<div id="examples" class="page__section">
+					<section class="examples">
+						<div class="container">
+							<h2 class="examples__title title">
+								Примеры ПРИМЕНЕНИя СНИМКОВ В СУДЕБНОЙ ПРАКТИКЕ
+							</h2>
+							<div class="slick">
+								<div class="slick__wrapper">
+									<div>
+										<div class="slick__item">
+											<div class="slick__title">
+												<h4 class="slick__title-text">
+													Кейс — Нарушение условий аренды земельного участка
+												</h4>
+												<img
+													src="/img/examples/slick-img1.svg"
+													alt="SlickImg"
+													class="slick__title-img"
+												/>
+											</div>
+											<div class="slick__content">
+												<span class="slick__content-subtitle">Задача</span>
+												<p class="slick__content-pretext">
+													Определить факт нарушения условий аренды земельного
+													участка и его использования не по назначению.
+												</p>
+												<span class="slick__content-subtitle"> Решение </span>
+												<p class="slick__content-text">
+													Архивные космические снимки за даты, предшествующие
+													заключению договора аренды, подтвердили отсутствие
+													рубок и нарушений в лесном покрове. На снимках за даты
+													нахождения участка в долговременной аренде
+													зафиксировано возведение капитальных строений и
+													вырубка леса. В отчёте также подсчитан ущерб,
+													нанесенный неправомерной деятельностью.
+												</p>
+											</div>
 										</div>
-										<div class="slick__content">
-											<span class="slick__content-subtitle">Задача</span>
-											<p class="slick__content-pretext">
-												Определить факт нарушения условий аренды земельного
-												участка и его использования не по назначению.
-											</p>
-											<span class="slick__content-subtitle"> Решение </span>
-											<p class="slick__content-text">
-												Архивные космические снимки за даты, предшествующие
-												заключению договора аренды, подтвердили отсутствие рубок
-												и нарушений в лесном покрове. На снимках за даты
-												нахождения участка в долговременной аренде зафиксировано
-												возведение капитальных строений и вырубка леса. В отчёте
-												также подсчитан ущерб, нанесенный неправомерной
-												деятельностью.
-											</p>
+									</div>
+									<div>
+										<div class="slick__item">
+											<div class="slick__title">
+												<h4 class="slick__title-text">
+													Кейс — Раздел имущества супругов
+												</h4>
+												<img
+													src="/img/examples/slick-img2.svg"
+													alt="SlickImg"
+													class="slick__title-img"
+												/>
+											</div>
+											<div class="slick__content">
+												<span class="slick__content-subtitle">Задача</span>
+												<p class="slick__content-pretext">
+													Определить имущество, принадлежавшее одному из
+													супругов до вступления в брак, на конкретной
+													территории для предъявления в судебном споре при
+													разделе земельного участка и имущества в рамках
+													бракоразводного процесса.
+												</p>
+												<span class="slick__content-subtitle"> Решение </span>
+												<p class="slick__content-text">
+													Архивные космические снимки за даты, предшествующие
+													заключению брака, подтвердили наличие спорного
+													имущества на указанной территории. В подготовленных
+													для заказчика материалах указана дата съемки,
+													координаты объекта, являющегося предметом
+													имущественного спора, дана привязка к кадастру.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div>
+										<div class="slick__item">
+											<div class="slick__title">
+												<h4 class="slick__title-text">
+													Кейс — Подтверждение ущерба имуществу в результате ЧС
+												</h4>
+												<img
+													src="/img/examples/slick-img3.svg"
+													alt="SlickImg"
+													class="slick__title-img"
+												/>
+											</div>
+											<div class="slick__content">
+												<span class="slick__content-subtitle">Задача</span>
+												<p class="slick__content-pretext">
+													Подтвердить нахождение имущества в зоне чрезвычайной
+													ситуации, факт нанесения ему ущерба для дальнейшего
+													обращения в страховую компанию или суд.
+												</p>
+												<span class="slick__content-subtitle"> Решение </span>
+												<p class="slick__content-text">
+													Сравнительный анализ двух разновременных снимков до и
+													после наступления чрезвычайной ситуации подтвердил
+													нахождение имущества в зоне стихийного бедствия, а
+													также нанесение ему ущерба. Данная информация в
+													дальнейшем может использоваться страховой компанией
+													или участниками судебного процесса для расчета
+													компенсации за повреждение имущества.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div>
+										<div class="slick__item">
+											<div class="slick__title">
+												<h4 class="slick__title-text">
+													Кейс — Несанкционированная свалка вблизи заповедника
+												</h4>
+												<img
+													src="/img/examples/slick-img4.svg"
+													alt="SlickImg"
+													class="slick__title-img"
+												/>
+											</div>
+											<div class="slick__content">
+												<span class="slick__content-subtitle">Задача</span>
+												<p class="slick__content-pretext">
+													Зафиксировать факт наличия и увеличения объемов
+													незаконной мусорной свалки на самовольно занятом
+													земельном участке вблизи особо охраняемой природной
+													территории (заповедника).
+												</p>
+												<span class="slick__content-subtitle"> Решение </span>
+												<p class="slick__content-text">
+													Анализ космических снимков подтвердил факт наличия
+													свалки вблизи заповедника, которая увеличивалась за
+													период 2017-2019 гг. Оценен предварительный
+													экологический ущерб. Установлен факт нарушения
+													природоохранного законодательства и норм
+													землепользования в конкретный период времени, с
+													указанием кадастровых границ и координат.
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div>
-									<div class="slick__item">
-										<div class="slick__title">
-											<h4 class="slick__title-text">
-												Кейс — Раздел имущества супругов
-											</h4>
-											<img
-												src="/img/examples/slick-img2.svg"
-												alt="SlickImg"
-												class="slick__title-img"
-											/>
+								<div class="slick__buttons">
+									<div class="slick__arrow">
+										<button class="slick__arrow-left">
+											<svg
+												width="48"
+												height="21"
+												viewBox="0 0 48 21"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M10.1498 21L11.9387 19.2227L4.85921 12.1765L48 12.1765L48 9.65546L4.85921 9.65546L11.9387 2.60924L10.1498 0.831925L4.68893e-06 10.916L10.1498 21Z"
+													fill="#1A3D8A"
+												/>
+											</svg>
+										</button>
+										<div class="slick__number">
+											<span class="slick__number-change"></span>
 										</div>
-										<div class="slick__content">
-											<span class="slick__content-subtitle">Задача</span>
-											<p class="slick__content-pretext">
-												Определить имущество, принадлежавшее одному из супругов
-												до вступления в брак, на конкретной территории для
-												предъявления в судебном споре при разделе земельного
-												участка и имущества в рамках бракоразводного процесса.
-											</p>
-											<span class="slick__content-subtitle"> Решение </span>
-											<p class="slick__content-text">
-												Архивные космические снимки за даты, предшествующие
-												заключению брака, подтвердили наличие спорного имущества
-												на указанной территории. В подготовленных для заказчика
-												материалах указана дата съемки, координаты объекта,
-												являющегося предметом имущественного спора, дана
-												привязка к кадастру.
-											</p>
-										</div>
+										<button class="slick__arrow-right">
+											<svg
+												width="49"
+												height="20"
+												viewBox="0 0 49 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M38.3752 0L36.5863 1.7625L43.6658 8.75H0.525024V11.25H43.6658L36.5863 18.2375L38.3752 20L48.525 10L38.3752 0Z"
+													fill="#1A3D8A"
+												/>
+											</svg>
+										</button>
 									</div>
-								</div>
-								<div>
-									<div class="slick__item">
-										<div class="slick__title">
-											<h4 class="slick__title-text">
-												Кейс — Подтверждение ущерба имуществу в результате ЧС
-											</h4>
-											<img
-												src="/img/examples/slick-img3.svg"
-												alt="SlickImg"
-												class="slick__title-img"
-											/>
-										</div>
-										<div class="slick__content">
-											<span class="slick__content-subtitle">Задача</span>
-											<p class="slick__content-pretext">
-												Подтвердить нахождение имущества в зоне чрезвычайной
-												ситуации, факт нанесения ему ущерба для дальнейшего
-												обращения в страховую компанию или суд.
-											</p>
-											<span class="slick__content-subtitle"> Решение </span>
-											<p class="slick__content-text">
-												Сравнительный анализ двух разновременных снимков до и
-												после наступления чрезвычайной ситуации подтвердил
-												нахождение имущества в зоне стихийного бедствия, а также
-												нанесение ему ущерба. Данная информация в дальнейшем
-												может использоваться страховой компанией или участниками
-												судебного процесса для расчета компенсации за
-												повреждение имущества.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div>
-									<div class="slick__item">
-										<div class="slick__title">
-											<h4 class="slick__title-text">
-												Кейс — Несанкционированная свалка вблизи заповедника
-											</h4>
-											<img
-												src="/img/examples/slick-img4.svg"
-												alt="SlickImg"
-												class="slick__title-img"
-											/>
-										</div>
-										<div class="slick__content">
-											<span class="slick__content-subtitle">Задача</span>
-											<p class="slick__content-pretext">
-												Зафиксировать факт наличия и увеличения объемов
-												незаконной мусорной свалки на самовольно занятом
-												земельном участке вблизи особо охраняемой природной
-												территории (заповедника).
-											</p>
-											<span class="slick__content-subtitle"> Решение </span>
-											<p class="slick__content-text">
-												Анализ космических снимков подтвердил факт наличия
-												свалки вблизи заповедника, которая увеличивалась за
-												период 2017-2019 гг. Оценен предварительный
-												экологический ущерб. Установлен факт нарушения
-												природоохранного законодательства и норм
-												землепользования в конкретный период времени, с
-												указанием кадастровых границ и координат.
-											</p>
-										</div>
-									</div>
+									<button class="slick__btn btn-secondary">
+										Посмотреть отчёт
+									</button>
 								</div>
 							</div>
-							<div class="slick__buttons">
-								<div class="slick__arrow">
-									<button class="slick__arrow-left">
-										<svg
-											width="48"
-											height="21"
-											viewBox="0 0 48 21"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M10.1498 21L11.9387 19.2227L4.85921 12.1765L48 12.1765L48 9.65546L4.85921 9.65546L11.9387 2.60924L10.1498 0.831925L4.68893e-06 10.916L10.1498 21Z"
-												fill="#1A3D8A"
-											/>
-										</svg>
-									</button>
-									<div class="slick__number">
-										<span class="slick__number-change"></span>
-									</div>
-									<button class="slick__arrow-right">
-										<svg
-											width="49"
-											height="20"
-											viewBox="0 0 49 20"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M38.3752 0L36.5863 1.7625L43.6658 8.75H0.525024V11.25H43.6658L36.5863 18.2375L38.3752 20L48.525 10L38.3752 0Z"
-												fill="#1A3D8A"
-											/>
-										</svg>
-									</button>
+							<div id="slider-dots"></div>
+							<a href="#" class="examples__text"
+								>Условия предоставления услуг</a
+							>
+						</div>
+					</section>
+
+					<section class="who">
+						<div class="container">
+							<h2 class="who__title title">
+								КОМУ МОГУТ ПОМОЧЬ КОСМИЧЕСКИЕ СНИМКИ
+							</h2>
+							<p class="who__text">
+								Сервис «Докажи.рф» открывает доступ к данным космической съемки
+								со спутников дистанционного зондирования Земли для самых разных
+								пользователей
+							</p>
+							<div class="who__inner">
+								<div class="who__item">
+									<img
+										src="/img/place.jpg"
+										data-src="/img/who/who-img1.svg"
+										alt="Who-image"
+										class="who__item-image"
+									/>
+									<p class="who__item-text">Физические лица</p>
 								</div>
-								<button class="slick__btn btn-secondary">
-									Посмотреть отчёт
-								</button>
+								<div class="who__item">
+									<img src="/img/place.jpg" data-src="/img/who/who-img2.svg"
+									alt=Who-image" class="who__item-image">
+									<p class="who__item-text">Страховые компании</p>
+								</div>
+								<div class="who__item">
+									<img
+										src="/img/place.jpg"
+										data-src="/img/who/who-img3.svg"
+										alt="Who-image"
+										class="who__item-image"
+									/>
+									<p class="who__item-text">Некоммерческие организации</p>
+								</div>
+								<div class="who__item">
+									<img
+										src="/img/place.jpg"
+										data-src="/img/who/who-img4.svg"
+										alt="Who-image"
+										class="who__item-image"
+									/>
+									<p class="who__item-text">Некоммерческие организации</p>
+								</div>
+								<div class="who__item">
+									<img
+										src="/img/place.jpg"
+										data-src="/img/who/who-img5.svg"
+										alt="Who-image"
+										class="who__item-image"
+									/>
+									<p class="who__item-text">Правозащитные организации</p>
+								</div>
+								<div class="who__item">
+									<img
+										src="/img/place.jpg"
+										data-src="/img/who/who-img6.svg"
+										alt="Who-image"
+										class="who__item-image"
+									/>
+									<p class="who__item-text">Экологические правозащитники</p>
+								</div>
 							</div>
 						</div>
-						<div id="slider-dots"></div>
-						<a href="#" class="examples__text">Условия предоставления услуг</a>
-					</div>
-				</section>
+					</section>
 
-				<section class="page__who who">
+					<section class="order">
+						<div class="container">
+							<div class="order__inner">
+								<div class="order__content">
+									<h2 class="order__content-title title">КАК СДЕЛАТЬ ЗАКАЗ</h2>
+									<p class="order__content-text">
+										Заказ можно оформить круглосуточно на нашем сайте или в
+										рабочее время по телефону +7 (495) 745-59-57. Обработка
+										заказов, поступивших в нерабочее время, производится в
+										ближайший к ним рабочий день.
+									</p>
+									<button class="order__content-btn btn-primary">
+										Оставить заявку
+									</button>
+								</div>
+								<div class="order__steps">
+									<div class="order__steps-right">
+										<p class="order__steps-title">Шаг 1</p>
+										<p class="order__steps-text">Оставляете заявку</p>
+									</div>
+									<div class="order__steps-left">
+										<p class="order__steps-title">Шаг 2</p>
+										<p class="order__steps-text">Подтверждаете заказ</p>
+									</div>
+									<div class="order__steps-right">
+										<p class="order__steps-title">Шаг 3</p>
+										<p class="order__steps-text">Заключаете договор</p>
+									</div>
+									<div class="order__steps-left">
+										<p class="order__steps-title">Шаг 4</p>
+										<p class="order__steps-text">Оплачиваете счет</p>
+									</div>
+									<div class="order__steps-right">
+										<p class="order__steps-title">Шаг 5</p>
+										<p class="order__steps-text">Получаете заказ</p>
+									</div>
+									<img
+										class="order__steps-line"
+										src="/img/order/line.svg"
+										alt="line"
+									/>
+								</div>
+							</div>
+							<button class="order__content-down btn-primary">
+								Оставить заявку
+							</button>
+						</div>
+					</section>
+				</div>
+
+				<div id="tariffs" class="page__section">
+					<section class="tariffs">
+						<div class="container">
+							<h2 class="tariffs__title title">тарифы</h2>
+							<p class="tariffs__subtitle">
+								Выберите тариф с учетом необходимых параметров и узнайте,
+								сколько будет стоить заказ
+							</p>
+							<div class="tariffs__inner">
+								<div class="tariffs__item">
+									<h6 class="tariffs__item-title">Космические снимки</h6>
+									<p class="tariffs__item-text">
+										Снимки подбираются специалистами на определенную территорию
+										и даты по запросу заказчика
+									</p>
+									<span class="tariffs__item-price">от 8 000 руб.</span>
+									<button class="tariffs__item-btn btn-primary">Выбрать</button>
+								</div>
+								<div class="tariffs__item">
+									<h6 class="tariffs__item-title">Экспертное заключение</h6>
+									<p class="tariffs__item-text">
+										Отчет содержит аналитические заключения по результатам
+										дешифрирования космических снимков
+									</p>
+									<span class="tariffs__item-price">от 50 000 руб.</span>
+									<button class="tariffs__item-btn btn-primary">Выбрать</button>
+								</div>
+								<div class="tariffs__item">
+									<h6 class="tariffs__item-title">
+										Космоснимки с экспертным заключением
+									</h6>
+									<p class="tariffs__item-text">
+										Снимки и подробное заключение специалиста на основе
+										космосъемки и кадастровых данных
+									</p>
+									<span class="tariffs__item-price">от 58 000 руб.</span>
+									<button class="tariffs__item-btn btn-primary">Выбрать</button>
+								</div>
+							</div>
+							<aside class="tariffs__text">
+								Информация носит исключительно информационный характер и ни при
+								каких условиях не является публичной офертой.
+							</aside>
+							<a class="tariffs__doc" href="#"
+								>Мы работаем по договору <img src="/img/tarrifs/doc.svg" alt=""
+							/></a>
+						</div>
+					</section>
+
+					<section class="about">
+						<div class="container">
+							<div class="about__inner">
+								<div class="about__content">
+									<h2 class="about__content-title title">О сервисе</h2>
+									<p class="about__content-text">
+										«Докажи.рф» - разработка АО «Терра Тех», дочернего
+										предприятия холдинга «Российские космические системы» (РКС,
+										входит в Госкорпорацию «Роскосмос»). Сервис открывает доступ
+										к архивной и новой спутниковой съемке, а также отчетам на ее
+										основе для юридических и физических лиц в целях
+										использования в суде.
+									</p>
+									<div class="about__content-caunter">
+										Успешно выполненных заявок:
+										<img
+											class="about__content-img"
+											src="/img/about/rocet2.png"
+											alt=""
+										/>
+										<div class="caunter">13574</div>
+									</div>
+									<button class="about__content-btn btn-primary">
+										Оставить заявку
+									</button>
+								</div>
+								<div class="about__paralax">
+									<img
+										class="about__paralax-center"
+										src="/img/about/img-bc.png"
+										alt="Image"
+									/>
+									<img
+										class="about__paralax-one"
+										src="/img/about/image1.svg"
+										alt="Image"
+									/>
+									<img
+										class="about__paralax-two"
+										src="/img/about/image2.svg"
+										alt="Image"
+									/>
+									<img
+										class="about__paralax-three"
+										src="/img/about/image3.svg"
+										alt="Image"
+									/>
+									<img
+										class="about__paralax-four"
+										src="/img/about/image4.svg"
+										alt="Image"
+									/>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="choose">
+						<div class="container">
+							<h2 class="choose__title title">Почему выбирают нас</h2>
+							<p class="choose__text">
+								«Терра Тех» обладает внушительным опытом поиска и анализа любой
+								доступной пространственной информации на территории земного шара
+								за любой период времени
+							</p>
+							<div class="choose__inner">
+								<div class="choose__item">
+									<div class="choose__item-box">
+										<div class="choose__item-img">
+											<img src="/img/choose/choose1.svg" alt="Image-choose" />
+										</div>
+										<span class="choose__item-title"
+											>Надежный поставщик данных</span
+										>
+									</div>
+									<p class="choose__item-text">
+										У нас Вы можете оперативно приобрести данные съемки со всех
+										мировых коммерчески доступных спутников за последние 20 лет,
+										что позволяет уверенно определить историю использования и
+										изменений на конкретном участке.
+									</p>
+								</div>
+								<div class="choose__item">
+									<div class="choose__item-box">
+										<div class="choose__item-img">
+											<img src="/img/choose/choose2.svg" alt="Image-choose" />
+										</div>
+										<span class="choose__item-title"
+											>Гарантированное качество</span
+										>
+									</div>
+									<p class="choose__item-text">
+										Дешифрование космических снимков и подготовка экспертных
+										заключений проводится ведущими экспертами отрасли,
+										кандидатами географических и технических наук, имеющими
+										многолетний опыт работы с геопространственными данными.
+									</p>
+								</div>
+								<div class="choose__item">
+									<div class="choose__item-box">
+										<div class="choose__item-img">
+											<img src="/img/choose/choose3.svg" alt="Image-choose" />
+										</div>
+										<span class="choose__item-title"
+											>Большой выбор снимков</span
+										>
+									</div>
+									<p class="choose__item-text">
+										Доступ к базе разновременных космических снимков с
+										российских и зарубежных космических аппаратов за последние
+										20 лет позволяет уверенно определить историю использования и
+										изменений на конкретном участке.
+									</p>
+								</div>
+								<div class="choose__item">
+									<div class="choose__item-box">
+										<div class="choose__item-img">
+											<img src="/img/choose/choose4.svg" alt="Image-choose" />
+										</div>
+										<span class="choose__item-title">Конфиденциальность</span>
+									</div>
+									<p class="choose__item-text">
+										Абсолютная конфиденциальность является одним из главных
+										принципов нашей работы. Доверяя нашим специалистам свой
+										заказ, Вы можете быть полностью уверены, что Ваши данные
+										будут надежно защищены.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="questions">
+						<div class="container">
+							<h2 class="questions__title title">часто задаваемые Вопросы</h2>
+							<div class="accordion">
+								<div class="accordion__item">
+									<button class="accordion__btn">
+										Какая информация требуется для начала работы?
+									</button>
+									<div class="accordion__content">
+										<p class="accordion__content-subtitle">
+											Для наиболее точного определения подходящего снимка
+											специалисту потребуется уточнить следующие данные:
+										</p>
+										<ul>
+											<li class="accordion__content-list">
+												• территория интереса (по возможности, сообщите
+												координаты места и площадь);
+											</li>
+											<li class="accordion__content-list">
+												• дату или временной интервал;
+											</li>
+											<li class="accordion__content-list">
+												• решаемая при помощи космических снимков задача.
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="accordion__item">
+									<button class="accordion__btn">
+										Сколько времени занимает подготовка необходимых материалов?
+									</button>
+									<div class="accordion__content">
+										<p class="accordion__content-subtitle">
+											Для наиболее точного определения подходящего снимка
+											специалисту потребуется уточнить следующие данные:
+										</p>
+										<ul>
+											<li class="accordion__content-list">
+												• территория интереса (по возможности, сообщите
+												координаты места и площадь);
+											</li>
+											<li class="accordion__content-list">
+												• дату или временной интервал;
+											</li>
+											<li class="accordion__content-list">
+												• решаемая при помощи космических снимков задача.
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="accordion__item">
+									<button class="accordion__btn">
+										Как осуществляется оплата?
+									</button>
+									<div class="accordion__content">
+										<p class="accordion__content-subtitle">
+											Для наиболее точного определения подходящего снимка
+											специалисту потребуется уточнить следующие данные:
+										</p>
+										<ul>
+											<li class="accordion__content-list">
+												• территория интереса (по возможности, сообщите
+												координаты места и площадь);
+											</li>
+											<li class="accordion__content-list">
+												• дату или временной интервал;
+											</li>
+											<li class="accordion__content-list">
+												• решаемая при помощи космических снимков задача.
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="accordion__item">
+									<button class="accordion__btn">
+										Как будут выглядеть снимки, отчет и экспертное заключение?
+									</button>
+									<div class="accordion__content">
+										<p class="accordion__content-subtitle">
+											Для наиболее точного определения подходящего снимка
+											специалисту потребуется уточнить следующие данные:
+										</p>
+										<ul>
+											<li class="accordion__content-list">
+												• территория интереса (по возможности, сообщите
+												координаты места и площадь);
+											</li>
+											<li class="accordion__content-list">
+												• дату или временной интервал;
+											</li>
+											<li class="accordion__content-list">
+												• решаемая при помощи космических снимков задача.
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<section id="contacts" class="page__section request">
 					<div class="container">
-						<h2 class="who__title title">
-							КОМУ МОГУТ ПОМОЧЬ КОСМИЧЕСКИЕ СНИМКИ
-						</h2>
-						<p class="who__text">
-							Сервис «Докажи.рф» открывает доступ к данным космической съемки со
-							спутников дистанционного зондирования Земли для самых разных
-							пользователей
+						<h2 class="request__title title">оставьте вашу заявку</h2>
+						<form class="request__form form">
+							<ul class="form__contact">
+								<li class="form__contact-item">
+									<input type="text" name="name" id="" placeholder="Ваше имя" />
+								</li>
+								<li class="form__contact-item">
+									<input
+										type="tel"
+										name="phone"
+										id=""
+										placeholder="Номер телефона"
+									/>
+								</li>
+								<li class="form__contact-item">
+									<input type="email" name="email" id="" placeholder="E-mail" />
+								</li>
+							</ul>
+							<input
+								class="form__question"
+								name="question"
+								type="text"
+								placeholder="Ваш вопрос"
+							/>
+							<input
+								class="form__adres"
+								type="text"
+								name="adres"
+								placeholder="Кадастровый номер или адрес интересующего вас объекта"
+							/>
+							<div class="form__tariff">
+								<span>Выберите услугу:</span>
+								<button class="form__tariff-btn">Космические снимки</button>
+								<ul class="form__tariff-lis">
+									<li class="form__tariff-item">Космические снимки</li>
+									<li class="form__tariff-item">Экспертное заключение</li>
+									<li class="form__tariff-item">
+										Космоснимки с экспертным заключением
+									</li>
+								</ul>
+							</div>
+							<button class="form__btn btn-primary">Отправить</button>
+						</form>
+						<p class="request__text">
+							Нажимая «Отправить», я даю согласие на обработку персональных
+							данных в соответствии с Федеральным законом № 152-ФЗ «О
+							персональных данных» от 27.07.2006. и соглашаюсь с
+							<a href="" class="request__link">Политикой конфиденциальности</a>
 						</p>
-						<div class="who__inner">
-							<div class="who__item">
-								<img
-									src="/img/who/who-img1.svg"
-									alt="Who-image"
-									class="who__item-image"
-								/>
-								<p class="who__item-text">Физические лица</p>
-							</div>
-							<div class="who__item">
-								<img src="/img/who/who-img2.svg" alt=Who-image"
-								class="who__item-image">
-								<p class="who__item-text">Страховые компании</p>
-							</div>
-							<div class="who__item">
-								<img
-									src="/img/who/who-img3.svg"
-									alt="Who-image"
-									class="who__item-image"
-								/>
-								<p class="who__item-text">Некоммерческие организации</p>
-							</div>
-							<div class="who__item">
-								<img
-									src="/img/who/who-img4.svg"
-									alt="Who-image"
-									class="who__item-image"
-								/>
-								<p class="who__item-text">Некоммерческие организации</p>
-							</div>
-							<div class="who__item">
-								<img
-									src="/img/who/who-img5.svg"
-									alt="Who-image"
-									class="who__item-image"
-								/>
-								<p class="who__item-text">Правозащитные организации</p>
-							</div>
-							<div class="who__item">
-								<img
-									src="/img/who/who-img6.svg"
-									alt="Who-image"
-									class="who__item-image"
-								/>
-								<p class="who__item-text">Экологические правозащитники</p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="page__order order">
-					<div class="container">
-						<div class="order__innder">
-							<div class="order__content">
-								<h2 class="order__content-title title">КАК СДЕЛАТЬ ЗАКАЗ</h2>
-								<p class="order__content-text">
-									Заказ можно оформить круглосуточно на нашем сайте или в
-									рабочее время по телефону +7 (495) 745-59-57. Обработка
-									заказов, поступивших в нерабочее время, производится в
-									ближайший к ним рабочий день.
-								</p>
-								<button class="order__content-btn btn-primary">
-									Оставить заявку
-								</button>
-							</div>
-							<div class="order__steps">
-								<div class="order__steps-right">
-									<p class="order__steps-title">Шаг 1</p>
-									<p class="order__steps-text">Оставляете заявку</p>
-								</div>
-								<div class="order__steps-left">
-									<p class="order__steps-title">Шаг 2</p>
-									<p class="order__steps-text">Подтверждаете заказ</p>
-								</div>
-								<div class="order__steps-right">
-									<p class="order__steps-title">Шаг 3</p>
-									<p class="order__steps-text">Заключаете договор</p>
-								</div>
-								<div class="order__steps-left">
-									<p class="order__steps-title">Шаг 4</p>
-									<p class="order__steps-text">Оплачиваете счет</p>
-								</div>
-								<div class="order__steps-right">
-									<p class="order__steps-title">Шаг 5</p>
-									<p class="order__steps-text">Получаете заказ</p>
-								</div>
-							</div>
-						</div>
 					</div>
 				</section>
 			</main>
-			<footer class="footer"></footer>
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__contacts">
+						<div class="footer__phone">
+							<a class="footer__phone-tel" href="tel:74957455957"
+								>+7 (495) 745 59 57
+							</a>
+							<a class="footer__phone-btn btn-primary" href="tel:74957455957"
+								>Перезвоните мне</a
+							>
+						</div>
+						<div class="footer__mail">
+							<img src="/img/footer/mail.svg" alt="" class="footer__mail-img" />
+							<a href="mailto:info@terratech.ru"> info@terratech.ru </a>
+						</div>
+						<div class="footer__address">
+							<address>
+								г. Москва, Каширское шоссе, дом 3, корпус 2, строение 4
+							</address>
+						</div>
+					</div>
+					<div class="footer__inner">
+						<div class="footer__inner-logo">
+							<a href="#" class="logo">
+								<img
+									class="logo__img"
+									src="/img/footer/logo-footer.svg"
+									alt="Logo"
+								/>
+								<p class="logo__slogan">Профессиональная космическая помощь</p>
+							</a>
+						</div>
+						<p class="footer__inner-copyright">&copy; АО "ТЕРРА ТЕХ", 2020</p>
+						<a href="" class="footer__inner-link"
+							>Политика конфиденциальности</a
+						>
+					</div>
+				</div>
+			</footer>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="/js/slick.min.js"></script>
