@@ -213,17 +213,6 @@ accordionButtons.forEach(function (button) {
 });
 //==============================================================================
 
-const tariff = document.querySelector(".form__tariff");
-const tariffButton = tariff.querySelector(".form__tariff-btn");
-const tariffList = tariff.querySelector(".form__tariff-lis");
-
-tariffButton.addEventListener("click", function (e) {
-	e.preventDefault();
-	tariffList.classList.toggle("form__tariff-lis--open");
-});
-
-//======================================================================
-
 const orderSteps = document.querySelectorAll(
 	".order__steps-right, .order__steps-left"
 );
@@ -253,7 +242,7 @@ const orderObserver = new IntersectionObserver(
 orderSteps.forEach(function (step) {
 	orderObserver.observe(step);
 });
-//===============================================================
+//===============================================================lazy
 const imgWho = document.querySelectorAll("img[data-src]");
 let loadedImages = 0;
 
@@ -283,3 +272,33 @@ imgWho.forEach(function (step) {
 	whoObserver.observe(step);
 });
 //==================================================================
+const form = document.querySelector(".form");
+const loader = document.querySelector(".request__loader");
+const thanksText = document.querySelector(".request__thanks-text");
+
+form.addEventListener("submit", function (event) {
+	event.preventDefault();
+	loader.classList.add("request__loader--open");
+	form.classList.add("form--hide");
+	setTimeout(function () {
+		loader.classList.remove("request__loader--open");
+		thanksText.classList.add("request__thanks-text--open");
+	}, 3000);
+});
+//==========================================================
+const tariffsInner = document.querySelector(".tariffs__inner");
+const tariffSelect = document.querySelector(".form__tariffs-select");
+
+tariffsInner.addEventListener("click", function (event) {
+	const targetElement = event.target.closest(".tariffs__item-btn");
+	if (targetElement) {
+		const element = document.querySelector("#contacts");
+		const offsetTop = element.offsetTop;
+		tariffSelect.value = targetElement.value;
+
+		wrapper.scroll({
+			top: offsetTop,
+			behavior: "smooth",
+		});
+	}
+});

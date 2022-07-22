@@ -154,6 +154,12 @@ a {
   border-radius: 25px;
   letter-spacing: 0.02em;
   line-height: 45px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.btn-primary:hover {
+  background: #049273;
 }
 
 .btn-secondary {
@@ -404,6 +410,10 @@ a {
           transform: rotate(-135deg);
 }
 
+.header__contacts {
+  z-index: 25;
+}
+
 @media screen and (max-width: 425px) {
   .header__contacts {
     display: none;
@@ -411,6 +421,7 @@ a {
 }
 
 .header__contacts-phone {
+  z-index: 25;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,6 +432,7 @@ a {
 }
 
 .header__contacts-img {
+  z-index: 15;
   margin-left: 15px;
 }
 
@@ -1436,9 +1448,16 @@ a {
   width: 346px;
   padding: 50px 33px;
   background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 40px rgba(26, 61, 138, 0.15);
+          box-shadow: 0px 0px 40px rgba(26, 61, 138, 0.15);
+  text-align: center;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+.tariffs__item:hover {
   -webkit-box-shadow: 0px 0px 40px rgba(26, 61, 138, 0.3);
           box-shadow: 0px 0px 40px rgba(26, 61, 138, 0.3);
-  text-align: center;
 }
 
 .tariffs__item:not(:last-child) {
@@ -1649,24 +1668,28 @@ a {
 }
 
 .about__paralax-one {
+  max-width: 201px;
   position: absolute;
   top: 270px;
   left: -45px;
 }
 
 .about__paralax-two {
+  max-width: 172px;
   position: absolute;
   top: 165px;
   left: 175px;
 }
 
 .about__paralax-three {
+  max-width: 133px;
   position: absolute;
   top: 108px;
   left: 333px;
 }
 
 .about__paralax-four {
+  max-width: 180px;
   position: absolute;
   top: 180px;
   left: 415px;
@@ -1761,6 +1784,7 @@ a {
 }
 
 .choose__item-img img {
+  max-width: 62px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -1934,6 +1958,7 @@ a {
 .request__title {
   color: #ffffff;
   text-align: center;
+  margin-bottom: 45px;
 }
 
 @media screen and (max-width: 425px) {
@@ -1941,17 +1966,6 @@ a {
     font-size: 21px;
     line-height: 28px;
     margin-bottom: 30px;
-  }
-}
-
-.request__form {
-  margin-top: 45px;
-  margin-bottom: 18px;
-}
-
-@media screen and (max-width: 425px) {
-  .request__form {
-    margin-top: 0px;
   }
 }
 
@@ -1968,8 +1982,35 @@ a {
   text-decoration: underline;
 }
 
+.request__loader {
+  position: relative;
+  height: 500px;
+  display: none;
+}
+
+.request__loader--open {
+  display: block;
+}
+
+.request__thanks-text {
+  padding: 200px 0 200px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 62px;
+  display: none;
+}
+
+.request__thanks-text--open {
+  display: block;
+}
+
 .form {
   text-align: center;
+}
+
+.form--hide {
+  display: none;
 }
 
 .form__contact {
@@ -2107,6 +2148,7 @@ a {
   margin-bottom: 30px;
   position: relative;
   text-align: left;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .form__tariff span {
@@ -2117,46 +2159,21 @@ a {
   padding-right: 5px;
 }
 
-.form__tariff-lis {
-  position: absolute;
-  display: none;
+@media screen and (max-width: 425px) {
+  .form__tariff span {
+    font-size: 16px;
+  }
 }
 
-.form__tariff-lis--open {
-  display: block;
-}
-
-.form__tariff-btn {
-  text-align: left;
+.form__tariffs-select {
+  display: inline-block;
   background-color: #00bf96;
-  font-weight: 400;
   font-size: 19px;
   line-height: 27px;
   color: #ffffff;
-  padding: 10px 30px;
-  border-radius: 10px;
-}
-
-.form__tariff-item {
-  text-align: center;
-  background-color: #00bf96;
-  border: 1px solid #ffffff;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 27px;
-  color: #ffffff;
-  width: 412px;
-  padding: 10px 0;
+  padding: 5px 0 5px 5px;
   border-radius: 5px;
-  margin: 3px auto;
   cursor: pointer;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
-.form__tariff-item:hover {
-  color: #3680e0;
-  border: 1px solid #3680e0;
 }
 
 .form__btn {
@@ -2166,11 +2183,63 @@ a {
   line-height: 45px;
   letter-spacing: 0.02em;
   color: #ffffff;
+  margin-bottom: 17px;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .footer {
   padding-top: 63px;
   padding-bottom: 94px;
+}
+
+@media screen and (max-width: 425px) {
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .footer__contacts {
@@ -2182,10 +2251,25 @@ a {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 425px) {
+  .footer__contacts {
+    display: block;
+  }
+}
+
 .footer__phone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__phone {
+    margin-bottom: 10px;
+  }
 }
 
 .footer__phone-tel {
@@ -2206,6 +2290,12 @@ a {
   color: #ffffff;
 }
 
+@media screen and (max-width: 768px) {
+  .footer__phone-btn {
+    display: none;
+  }
+}
+
 .footer__mail {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2213,6 +2303,12 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__mail {
+    margin-bottom: 10px;
+  }
 }
 
 .footer__mail a {
@@ -2245,6 +2341,13 @@ a {
   text-align: center;
 }
 
+@media screen and (max-width: 425px) {
+  .footer__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .footer__inner-logo {
   opacity: 0.7;
 }
@@ -2263,4 +2366,10 @@ a {
   font-size: 13px;
   line-height: 45px;
   opacity: 0.7;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__inner-link {
+    margin-top: 10px;
+  }
 }

@@ -488,7 +488,9 @@
 										и даты по запросу заказчика
 									</p>
 									<span class="tariffs__item-price">от 8 000 руб.</span>
-									<button class="tariffs__item-btn btn-primary">Выбрать</button>
+									<button value="1" class="tariffs__item-btn btn-primary">
+										Выбрать
+									</button>
 								</div>
 								<div class="tariffs__item">
 									<h6 class="tariffs__item-title">Экспертное заключение</h6>
@@ -497,7 +499,9 @@
 										дешифрирования космических снимков
 									</p>
 									<span class="tariffs__item-price">от 50 000 руб.</span>
-									<button class="tariffs__item-btn btn-primary">Выбрать</button>
+									<button value="2" class="tariffs__item-btn btn-primary">
+										Выбрать
+									</button>
 								</div>
 								<div class="tariffs__item">
 									<h6 class="tariffs__item-title">
@@ -508,7 +512,9 @@
 										космосъемки и кадастровых данных
 									</p>
 									<span class="tariffs__item-price">от 58 000 руб.</span>
-									<button class="tariffs__item-btn btn-primary">Выбрать</button>
+									<button value="3" class="tariffs__item-btn btn-primary">
+										Выбрать
+									</button>
 								</div>
 							</div>
 							<aside class="tariffs__text">
@@ -538,8 +544,9 @@
 										Успешно выполненных заявок:
 										<img
 											class="about__content-img"
-											src="/img/about/rocet2.png"
+											data-src="/img/about/rocet2.png"
 											alt=""
+											src="/img/place.jpg"
 										/>
 										<div class="caunter">13574</div>
 									</div>
@@ -549,28 +556,33 @@
 								</div>
 								<div class="about__paralax">
 									<img
+										src="/img/place.jpg"
 										class="about__paralax-center"
-										src="/img/about/img-bc.png"
+										data-src="/img/about/img-bc.png"
 										alt="Image"
 									/>
 									<img
+										src="/img/place.jpg"
 										class="about__paralax-one"
-										src="/img/about/image1.svg"
+										data-src="/img/about/image1.svg"
 										alt="Image"
 									/>
 									<img
+										src="/img/place.jpg"
 										class="about__paralax-two"
-										src="/img/about/image2.svg"
+										data-src="/img/about/image2.svg"
 										alt="Image"
 									/>
 									<img
+										src="/img/place.jpg"
 										class="about__paralax-three"
-										src="/img/about/image3.svg"
+										data-src="/img/about/image3.svg"
 										alt="Image"
 									/>
 									<img
+										src="/img/place.jpg"
 										class="about__paralax-four"
-										src="/img/about/image4.svg"
+										data-src="/img/about/image4.svg"
 										alt="Image"
 									/>
 								</div>
@@ -590,7 +602,11 @@
 								<div class="choose__item">
 									<div class="choose__item-box">
 										<div class="choose__item-img">
-											<img src="/img/choose/choose1.svg" alt="Image-choose" />
+											<img
+												src="/img/place.jpg"
+												data-src="/img/choose/choose1.svg"
+												alt="Image-choose"
+											/>
 										</div>
 										<span class="choose__item-title"
 											>Надежный поставщик данных</span
@@ -606,7 +622,11 @@
 								<div class="choose__item">
 									<div class="choose__item-box">
 										<div class="choose__item-img">
-											<img src="/img/choose/choose2.svg" alt="Image-choose" />
+											<img
+												src="/img/place.jpg"
+												data-src="/img/choose/choose2.svg"
+												alt="Image-choose"
+											/>
 										</div>
 										<span class="choose__item-title"
 											>Гарантированное качество</span
@@ -622,7 +642,11 @@
 								<div class="choose__item">
 									<div class="choose__item-box">
 										<div class="choose__item-img">
-											<img src="/img/choose/choose3.svg" alt="Image-choose" />
+											<img
+												src="/img/place.jpg"
+												data-src="/img/choose/choose3.svg"
+												alt="Image-choose"
+											/>
 										</div>
 										<span class="choose__item-title"
 											>Большой выбор снимков</span
@@ -638,7 +662,11 @@
 								<div class="choose__item">
 									<div class="choose__item-box">
 										<div class="choose__item-img">
-											<img src="/img/choose/choose4.svg" alt="Image-choose" />
+											<img
+												src="/img/place.jpg"
+												data-src="/img/choose/choose4.svg"
+												alt="Image-choose"
+											/>
 										</div>
 										<span class="choose__item-title">Конфиденциальность</span>
 									</div>
@@ -756,8 +784,8 @@
 
 				<section id="contacts" class="page__section request">
 					<div class="container">
-						<h2 class="request__title title">оставьте вашу заявку</h2>
 						<form class="request__form form">
+							<h2 class="request__title title">оставьте вашу заявку</h2>
 							<ul class="form__contact">
 								<li class="form__contact-item">
 									<input type="text" name="name" id="" placeholder="Ваше имя" />
@@ -788,23 +816,36 @@
 							/>
 							<div class="form__tariff">
 								<span>Выберите услугу:</span>
-								<button class="form__tariff-btn">Космические снимки</button>
-								<ul class="form__tariff-lis">
-									<li class="form__tariff-item">Космические снимки</li>
-									<li class="form__tariff-item">Экспертное заключение</li>
-									<li class="form__tariff-item">
+								<select class="form__tariffs-select" required>
+									<option value="" selected>Не выбрано</option>
+									<option class="form__tariffs-item" value="1">
+										Космические снимки
+									</option>
+									<option class="form__tariffs-item" value="2">
+										Экспертное заключение
+									</option>
+									<option class="form__tariffs-item" value="3">
 										Космоснимки с экспертным заключением
-									</li>
-								</ul>
+									</option>
+								</select>
 							</div>
 							<button class="form__btn btn-primary">Отправить</button>
+							<p class="request__text">
+								Нажимая «Отправить», я даю согласие на обработку персональных
+								данных в соответствии с Федеральным законом № 152-ФЗ «О
+								персональных данных» от 27.07.2006. и соглашаюсь с
+								<a href="" class="request__link"
+									>Политикой конфиденциальности</a
+								>
+							</p>
 						</form>
-						<p class="request__text">
-							Нажимая «Отправить», я даю согласие на обработку персональных
-							данных в соответствии с Федеральным законом № 152-ФЗ «О
-							персональных данных» от 27.07.2006. и соглашаюсь с
-							<a href="" class="request__link">Политикой конфиденциальности</a>
-						</p>
+						<div class="request__loader">
+							<div class="lds-dual-ring"></div>
+						</div>
+						<h6 class="request__thanks-text">
+							Спасибо за выбор! <br />
+							Менеджер с вами свяжется в ближайшее время!
+						</h6>
 					</div>
 				</section>
 			</main>
