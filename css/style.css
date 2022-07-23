@@ -2083,7 +2083,6 @@ a {
   font-size: 19px;
   line-height: 27px;
   color: #ffffff;
-  margin-bottom: 50px;
   border-bottom: 1px solid #ffffff;
 }
 
@@ -2184,6 +2183,28 @@ a {
   letter-spacing: 0.02em;
   color: #ffffff;
   margin-bottom: 17px;
+}
+
+.form__input-wrapper {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.form__lable {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 19px;
+  line-height: 27px;
+  color: #ffffff;
+  pointer-events: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.form__lable--focus {
+  font-size: 15px;
+  top: -100%;
 }
 
 .lds-dual-ring {

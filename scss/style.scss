@@ -1397,7 +1397,6 @@ a {
 		font-size: 19px;
 		line-height: 27px;
 		color: #ffffff;
-		margin-bottom: 50px;
 		border-bottom: 1px solid #ffffff;
 		&::placeholder {
 			color: #ffffff;
@@ -1452,49 +1451,6 @@ a {
 	}
 	&__tariffs-item {
 	}
-	// &__tariff-lis {
-	// 	position: absolute;
-	// 	display: none;
-	// 	&--open {
-	// 		display: block;
-	// 	}
-	// }
-	// &__tariff-btn {
-	// 	text-align: left;
-	// 	background-color: #00bf96;
-	// 	font-weight: 400;
-	// 	font-size: 19px;
-	// 	line-height: 27px;
-	// 	color: #ffffff;
-	// 	padding: 10px 30px;
-	// 	border-radius: 10px;
-	// 	@media screen and (max-width: $bp-425-max) {
-	// 		font-size: 16px;
-	// 	}
-	// }
-	// &__tariff-item {
-	// 	text-align: center;
-	// 	background-color: #00bf96;
-	// 	border: 1px solid #ffffff;
-	// 	font-weight: 400;
-	// 	font-size: 19px;
-	// 	line-height: 27px;
-	// 	color: #ffffff;
-	// 	width: 412px;
-	// 	padding: 10px 0;
-	// 	border-radius: 5px;
-	// 	margin: 3px auto;
-	// 	cursor: pointer;
-	// 	transition: 0.5s ease;
-
-	// 	&:hover {
-	// 		color: #3680e0;
-	// 		border: 1px solid #3680e0;
-	// 	}
-	// 	@media screen and (max-width: $bp-425-max) {
-	// 		font-size: 16px;
-	// 	}
-	// }
 
 	&__btn {
 		padding: 0 45px;
@@ -1504,6 +1460,24 @@ a {
 		letter-spacing: 0.02em;
 		color: #ffffff;
 		margin-bottom: 17px;
+	}
+	&__input-wrapper {
+		position: relative;
+		margin-bottom: 50px;
+	}
+	&__lable {
+		position: absolute;
+		left: 0;
+		top: 0;
+		font-size: 19px;
+		line-height: 27px;
+		color: #ffffff;
+		pointer-events: none;
+		transition: all 0.5s;
+		&--focus {
+			font-size: 15px;
+			top: -100%;
+		}
 	}
 }
 //=================================================

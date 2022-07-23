@@ -802,12 +802,10 @@
 									<input type="email" name="email" id="" placeholder="E-mail" />
 								</li>
 							</ul>
-							<input
-								class="form__question"
-								name="question"
-								type="text"
-								placeholder="Ваш вопрос"
-							/>
+							<div class="form__input-wrapper">
+								<span class="form__lable">Ваш вопрос</span>
+								<input class="form__question" name="question" type="text" />
+							</div>
 							<input
 								class="form__adres"
 								type="text"
@@ -816,7 +814,7 @@
 							/>
 							<div class="form__tariff">
 								<span>Выберите услугу:</span>
-								<select class="form__tariffs-select" required>
+								<select name="tariff" class="form__tariffs-select" required>
 									<option value="" selected>Не выбрано</option>
 									<option class="form__tariffs-item" value="1">
 										Космические снимки
@@ -830,6 +828,9 @@
 								</select>
 							</div>
 							<button class="form__btn btn-primary">Отправить</button>
+							<button type="reset" class="form__btn btn-primary">
+								Очистить
+							</button>
 							<p class="request__text">
 								Нажимая «Отправить», я даю согласие на обработку персональных
 								данных в соответствии с Федеральным законом № 152-ФЗ «О

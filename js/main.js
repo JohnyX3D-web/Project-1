@@ -46,6 +46,7 @@ navList.addEventListener("click", function (event) {
 		});
 	}
 });
+
 //===============================================
 const headerSection = document.querySelector(".header");
 const headerMenu = headerSection.querySelector(".header__menu");
@@ -285,6 +286,54 @@ form.addEventListener("submit", function (event) {
 		thanksText.classList.add("request__thanks-text--open");
 	}, 3000);
 });
+
+const localStorageKay = "contactForm";
+const draftValues = localStorage.getItem(localStorageKay);
+const values = draftValues === null ? {} : JSON.parse(draftValues);
+
+form.addEventListener("input", function (event) {
+	const input = event.target;
+	const name = input.name;
+	const value = input.value;
+
+	values[name] = value;
+
+	const stringValues = JSON.stringify(values);
+	localStorage.setItem(localStorageKay, stringValues);
+});
+
+form.addEventListener("reset", function () {
+	localStorage.removeItem(localStorageKay);
+});
+
+if (draftValues !== null) {
+	const formValues = JSON.parse(draftValues);
+
+	for (const nameInput in formValues) {
+		const input = form.querySelector(`[name="${nameInput}"]`);
+		input.value = formValues[nameInput];
+	}
+}
+
+const addressForm = form.querySelector('[name="adres"]');
+let addressPlaceholder = addressForm.placeholder;
+
+addressForm.addEventListener("focus", function (event) {
+	event.target.placeholder = "";
+});
+addressForm.addEventListener("blur", function (event) {
+	event.target.placeholder = addressPlaceholder;
+});
+
+const questionForm = document.querySelector('[name="question"]');
+const formLable = document.querySelector(".form__lable");
+
+questionForm.addEventListener("focus", function (event) {
+	formLable.classList.toggle("form__lable--focus");
+});
+questionForm.addEventListener("blur", function (event) {
+	formLable.classList.toggle("form__lable--focus");
+});
 //==========================================================
 const tariffsInner = document.querySelector(".tariffs__inner");
 const tariffSelect = document.querySelector(".form__tariffs-select");
@@ -302,3 +351,4 @@ tariffsInner.addEventListener("click", function (event) {
 		});
 	}
 });
+//========================================================================
