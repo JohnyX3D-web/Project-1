@@ -1,0 +1,206 @@
+.request {
+	background-color: #1a3d8a;
+	padding: 70px 0 40px;
+	@media screen and (max-width: $bp-425-max) {
+		padding: 30px 0 30px;
+	}
+	&__title {
+		color: #ffffff;
+		text-align: center;
+		margin-bottom: 45px;
+		@media screen and (max-width: $bp-425-max) {
+			font-size: 21px;
+			line-height: 28px;
+			margin-bottom: 30px;
+		}
+	}
+	&__form {
+	}
+	&__text {
+		font-weight: 300;
+		font-size: 13px;
+		line-height: 25px;
+		text-align: center;
+		letter-spacing: 0.02em;
+		color: #ffffff;
+	}
+	&__link {
+		text-decoration: underline;
+	}
+	&__loader {
+		position: relative;
+		height: 500px;
+		display: none;
+		&--open {
+			display: block;
+		}
+	}
+	&__thanks-text {
+		padding: 200px 0 200px;
+		text-align: center;
+		color: #ffffff;
+		font-size: 32px;
+		line-height: 62px;
+		display: none;
+		&--open {
+			display: block;
+		}
+	}
+}
+
+.form {
+	text-align: center;
+	&--hide {
+		display: none;
+	}
+	&__contact {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 50px;
+		@media screen and (max-width: $bp-425-max) {
+			display: block;
+			margin-bottom: 0px;
+		}
+	}
+	&__contact-item input::placeholder {
+		color: #ffffff;
+	}
+	&__contact-item input {
+		width: 350px;
+		background-color: transparent;
+		font-weight: 400;
+		font-size: 19px;
+		line-height: 27px;
+		color: #ffffff;
+		border-bottom: 1px solid #ffffff;
+		@media screen and (max-width: $bp-1024-max) {
+			width: 325px;
+		}
+		@media screen and (max-width: $bp-768-max) {
+			width: 240px;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			width: 100%;
+			margin-bottom: 30px;
+			font-size: 16px;
+		}
+	}
+	&__question {
+		background-color: transparent;
+		width: 100%;
+		font-weight: 400;
+		font-size: 19px;
+		line-height: 27px;
+		color: #ffffff;
+		border-bottom: 1px solid #ffffff;
+		&::placeholder {
+			color: #ffffff;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			margin-bottom: 30px;
+			font-size: 16px;
+		}
+	}
+	&__adres {
+		background-color: transparent;
+		width: 100%;
+		font-weight: 400;
+		font-size: 19px;
+		line-height: 27px;
+		color: #ffffff;
+		margin-bottom: 50px;
+		border-bottom: 1px solid #ffffff;
+		&::placeholder {
+			color: #ffffff;
+		}
+		@media screen and (max-width: $bp-425-max) {
+			margin-bottom: 30px;
+			font-size: 16px;
+		}
+	}
+	&__tariff {
+		margin-bottom: 30px;
+		position: relative;
+		text-align: left;
+		font-family: $roboto;
+		& span {
+			font-weight: 400;
+			font-size: 19px;
+			line-height: 27px;
+			color: #ffffff;
+			padding-right: 5px;
+			@media screen and (max-width: $bp-425-max) {
+				font-size: 16px;
+			}
+		}
+	}
+	&__tariffs-select {
+		display: inline-block;
+		background-color: #00bf96;
+		font-size: 19px;
+		line-height: 27px;
+		color: #ffffff;
+		padding: 5px 0 5px 5px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	&__tariffs-item {
+	}
+
+	&__btn {
+		padding: 0 45px;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 45px;
+		letter-spacing: 0.02em;
+		color: #ffffff;
+		margin-bottom: 17px;
+	}
+	&__input-wrapper {
+		position: relative;
+		margin-bottom: 50px;
+	}
+	&__lable {
+		position: absolute;
+		left: 0;
+		top: 0;
+		font-size: 19px;
+		line-height: 27px;
+		color: #ffffff;
+		pointer-events: none;
+		transition: all 0.5s;
+		&--focus {
+			font-size: 15px;
+			top: -100%;
+		}
+	}
+}
+//=================================================
+
+.lds-dual-ring {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.lds-dual-ring:after {
+	content: " ";
+	display: block;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border-radius: 50%;
+	border: 6px solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

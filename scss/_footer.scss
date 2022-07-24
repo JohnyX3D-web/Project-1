@@ -1,0 +1,93 @@
+.footer {
+	padding-top: 63px;
+	padding-bottom: 94px;
+	@media screen and (max-width: $bp-425-max) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	&__contacts {
+		display: flex;
+		justify-content: space-between;
+		@media screen and (max-width: $bp-425-max) {
+			display: block;
+		}
+	}
+	&__phone {
+		display: flex;
+		align-items: center;
+		@media screen and (max-width: $bp-425-max) {
+			margin-bottom: 10px;
+		}
+	}
+	&__phone-tel {
+		font-weight: 500;
+		font-size: 19px;
+		line-height: 45px;
+		letter-spacing: 0.02em;
+		margin-right: 50px;
+	}
+	&__phone-btn {
+		display: block;
+		padding: 0 51px 0 51px;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 45px;
+		letter-spacing: 0.02em;
+		color: #ffffff;
+		@media screen and (max-width: $bp-768-max) {
+			display: none;
+		}
+	}
+	&__mail {
+		display: flex;
+		align-items: center;
+		@media screen and (max-width: $bp-425-max) {
+			margin-bottom: 10px;
+		}
+	}
+	&__mail a {
+		font-weight: 500;
+		font-size: 17px;
+		line-height: 45px;
+		letter-spacing: 0.02em;
+	}
+	&__mail-img {
+		margin-right: 10px;
+	}
+	&__address {
+		max-width: 304px;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 27px;
+		letter-spacing: 0.02em;
+	}
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 80px;
+		text-align: center;
+		@media screen and (max-width: $bp-425-max) {
+			flex-wrap: wrap;
+		}
+	}
+	&__inner-logo {
+		opacity: 0.7;
+	}
+	&__inner-copyright {
+		text-align: center;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 45px;
+		opacity: 0.7;
+	}
+	&__inner-link {
+		text-align: center;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 45px;
+		opacity: 0.7;
+		@media screen and (max-width: $bp-425-max) {
+			margin-top: 10px;
+		}
+	}
+}

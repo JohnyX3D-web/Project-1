@@ -1,0 +1,180 @@
+.examples {
+	background-color: #00bf96;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	@media screen and (max-width: 480px) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	&__title {
+		color: #ffffff;
+		@media screen and (max-width: 480px) {
+			font-size: 21px;
+			line-height: 28px;
+		}
+	}
+	&__text {
+		font-weight: 500;
+		font-size: 19px;
+		line-height: 27px;
+		text-decoration-line: underline;
+		color: #ffffff;
+		@media screen and (max-width: 480px) {
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
+.slick {
+	background-color: #ffffff;
+	box-shadow: 0px 4px 50px rgba(26, 61, 138, 0.15);
+	margin-top: 50px;
+	margin-bottom: 30px;
+	padding-bottom: 50px;
+	@media screen and (max-width: 480px) {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		padding-bottom: 30px;
+	}
+	&__wrapper {
+		padding: 50px 50px 5px 50px;
+		@media screen and (max-width: 480px) {
+			padding: 16px 16px 25px 16px;
+		}
+	}
+	&__item {
+		overflow: hidden;
+		display: flex;
+		justify-content: flex-start;
+		@media screen and (max-width: 480px) {
+			display: block;
+		}
+	}
+	&__title {
+	}
+	&__title-text {
+		color: #1a3d8a;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 27px;
+		margin-bottom: 45px;
+		@media screen and (max-width: 480px) {
+			margin-bottom: 20px;
+		}
+	}
+	&__title-img {
+	}
+	&__content {
+		margin-left: 50px;
+		@media screen and (max-width: 480px) {
+			margin-left: 0px;
+			margin-top: 16px;
+		}
+	}
+	&__content-subtitle {
+		display: inline-block;
+		font-weight: 500;
+		line-height: 20px;
+		letter-spacing: 0.01em;
+		padding-bottom: 20px;
+		@media screen and (max-width: 480px) {
+			font-size: 14px;
+			padding-bottom: 12px;
+		}
+	}
+	&__content-pretext {
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 27px;
+		padding-bottom: 50px;
+		@media screen and (max-width: 480px) {
+			padding-bottom: 20px;
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+	&__content-text {
+		font-weight: 300;
+		line-height: 27px;
+		@media screen and (max-width: 480px) {
+			font-size: 14px;
+			line-height: 21px;
+		}
+	}
+	&__buttons {
+		display: flex;
+		align-items: center;
+		@media screen and (max-width: 480px) {
+			justify-content: center;
+		}
+	}
+	&__arrow {
+		position: relative;
+		@media screen and (max-width: 480px) {
+			display: none;
+		}
+	}
+	&__arrow-left {
+		position: absolute;
+		top: 3px;
+		left: 50px;
+		background-color: inherit;
+	}
+	&__number {
+		text-align: center;
+		padding-left: 180px;
+		padding-right: 188px;
+		&-change {
+			color: #333333;
+			font-weight: 500;
+			font-size: 19px;
+			line-height: 27px;
+		}
+	}
+	&__arrow-right {
+		position: absolute;
+		top: 3px;
+		left: 300px;
+		background-color: inherit;
+	}
+	&__btn {
+		padding: 0 55px 0 55px;
+		color: #ffffff;
+		font-weight: 400;
+		font-size: 17px;
+		transition: all 0.3s ease-in;
+		&:hover {
+			background-color: #4074e4;
+		}
+	}
+	&-disabled path {
+		fill: #c4c4c4;
+	}
+	&-dots {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		& li {
+			margin-right: 12px;
+		}
+		& li button {
+			font-size: 0;
+			width: 16px;
+			height: 16px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+		}
+		& li.slick-active button {
+			background-color: #ffffff;
+		}
+	}
+}
+
+#slider-dots {
+	display: none;
+	@media screen and (max-width: 480px) {
+		display: block;
+		margin-bottom: 40px;
+	}
+}
