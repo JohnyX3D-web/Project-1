@@ -1298,7 +1298,7 @@ a {
   left: -57px;
   width: 28px;
   height: 28px;
-  background-image: url(/img/order/col.svg);
+  background-image: url(../img/order/col.svg);
 }
 
 .order__steps-title {
@@ -1357,7 +1357,7 @@ a {
   left: 111%;
   width: 28px;
   height: 28px;
-  background-image: url(/img/order/col.svg);
+  background-image: url(../img/order/col.svg);
 }
 
 .order__steps-line {
