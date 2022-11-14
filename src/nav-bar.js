@@ -29,23 +29,6 @@ function closeMenu() {
 	navList.classList.remove("header__nav-list--active");
 }
 //========================================================
-navList.addEventListener("click", function (event) {
-	if (event.target.closest("a")) {
-		//closest - перевіряє чи елемент на якому ми викликаємоу функцію closest відповідає заданому селектору("а") якщо відповідає то повертає елемент відразу, якщо ні то йде до батьківських поки не знайде( якщо не знайде то повертає нул)
-		const target = event.target.closest("a");
-		const wrapper = document.querySelector(".wrapper");
-
-		event.preventDefault();
-		const elementId = target.getAttribute("href");
-		const element = document.querySelector(elementId);
-		const offsetTop = element.offsetTop;
-
-		wrapper.scroll({
-			top: offsetTop,
-			behavior: "smooth",
-		});
-	}
-});
 
 //===============================================
 const headerSection = document.querySelector(".header");
